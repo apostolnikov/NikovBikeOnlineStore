@@ -67,4 +67,55 @@ public class ProductModel
             return "Error:" + e;
         }
     }
+
+    public Product GetProduct(int id)
+    {
+        try
+        {
+            using (NikovBikeShopDBEntities db = new NikovBikeShopDBEntities())
+            {
+                Product product = db.Products.Find(id);
+                return product;
+            }
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    public List<Product> GetAllProducts()
+    {
+        try
+        {
+            using (NikovBikeShopDBEntities db = new NikovBikeShopDBEntities())
+            {
+                List<Product> products = (from x in db.Products select x).ToList();
+                return products;
+            }
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    public List<Product> GetProductsByType(int typeId)
+    {
+        try
+        {
+            using (NikovBikeShopDBEntities db = new NikovBikeShopDBEntities())
+            {
+                List<Product> productsByType = (from x in db.Products
+                    where x.TypeId == typeId
+                    select x).ToList();
+
+                return productsByType;
+            }
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 }
