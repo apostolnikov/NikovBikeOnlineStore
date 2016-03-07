@@ -60,7 +60,7 @@ public class ProductTypeModel
         }
         catch (Exception e)
         {
-            return "Error:" + e;
+            return "Error: " + e;
         }
     }
 }
