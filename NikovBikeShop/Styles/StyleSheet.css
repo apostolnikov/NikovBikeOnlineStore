@@ -119,3 +119,15 @@ a:visited {
     font-size: 24px;
     width: 2000px;
 }
+
+.button {
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    clear: both;
+    background: linear-gradient(to bottom, darkgreen, green)
+}
